@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ersan Havalandırma Ankara | Havalandırma ve Baca Sistemleri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Kurumsal Renk Tanımlamaları */
+        :root {
+            --ana-renk: #0f4c81;
+            /* Koyu Mavi */
+            --vurgu-renk: #f26522;
+            /* Turuncu */
+            --acik-renk: #f8f9fa;
+        }
+
+        .bg-ana {
+            background-color: var(--ana-renk) !important;
+        }
+
+        .text-ana {
+            color: var(--ana-renk);
+        }
+
+        .btn-vurgu {
+            background-color: var(--vurgu-renk);
+            color: white;
+            border: none;
+        }
+
+        .btn-vurgu:hover {
+            background-color: #d45316;
+            color: white;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(15, 76, 129, 0.85), rgba(15, 76, 129, 0.85)), url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1200') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .hizmet-kart:hover,
+        .proje-kart:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .proje-kart {
+            transition: 0.3s;
+        }
+
+        /* --- SONSUZ KAYAR BANT (SLIDER) STİLLERİ --- */
+        .slider-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider-container {
+            display: flex;
+            width: calc(280px * 12);
+            /* Kart genişliği (280px) x Toplam Sütun Sayısı (6 orijinal + 6 kopya = 12) */
+            animation: yanlaraKaydir 25s linear infinite;
+        }
+
+        .slider-container:hover {
+            animation-play-state: paused;
+        }
+
+        .slide-item {
+            width: 280px;
+            padding: 12px;
+            flex-shrink: 0;
+        }
+
+        .slide-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .slide-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .slide-card h5 {
+            padding: 15px 10px;
+            font-size: 1.05rem;
+            color: var(--ana-renk);
+            font-weight: 700;
+            margin: 0;
+            text-align: center;
+        }
+
+        @keyframes yanlaraKaydir {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-280px * 6));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-dark text-white py-2 font-monospace small">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <div><i class="fa-solid fa-location-dot text-warning me-2"></i> Ankara'nın Tüm İlçelerine Hizmet</div>
+            <div>
+                <a href="tel:05521120671" class="text-white text-decoration-none me-3"><i
+                        class="fa-solid fa-phone text-warning me-1"></i> 0552 112 06 71</a>
+                <a href="https://wa.me/905521120671" target="_blank"
+                    class="text-success text-decoration-none fw-bold"><i class="fa-brands fa-whatsapp me-1"></i>
+                    WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-ana fs-3" href="#">ERSAN HAVALANDIRMA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="#anasayfa">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hizmetler">Hizmetlerimiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#urunler">Ürünlerimiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projeler">Projelerimiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hakkimizda">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="anasayfa" class="hero-section text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h1 class="display-4 fw-bold mb-3">Ersan Havalandırma Sistemleri</h1>
+                    <p class="lead mb-4">Ersan Havalandırma olarak; endüstriyel mutfaklar, fabrikalar, sığınaklar ve
+                        mekanlar için profesyonel havalandırma, baca ve izolasyon çözümleri sunuyoruz.</p>
+                    <a href="#iletisim" class="btn btn-vurgu btn-lg px-4 py-2 fw-bold"><i
+                            class="fa-solid fa-envelope me-2"></i> Ücretsiz Keşif İste</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hizmetler" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-ana">Hizmetlerimiz</h2>
+                <p class="text-muted">Ankara ve çevre illerde verdiğimiz profesyonel hizmetler</p>
+                <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hizmet-kart">
+                        <div class="card-body text-center p-4">
+                            <i class="fa-solid fa-fan fa-3x text-ana mb-3"></i>
+                            <h4 class="card-title fw-bold">Kanal ve Fan Sistemleri</h4>
+                            <p class="card-text text-muted">Mekanınızın ihtiyacına uygun hava sirkülasyonu sağlayan
+                                sessiz ve güçlü emiş fanları kurulumu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hizmet-kart">
+                        <div class="card-body text-center p-4">
+                            <i class="fa-solid fa-fire-burner fa-3x text-ana mb-3"></i>
+                            <h4 class="card-title fw-bold">Eczane & Mutfak Davlumbazları</h4>
+                            <p class="card-text text-muted">Lokanta, restoran ve sanayi tipi mutfaklar için koku ve
+                                dumanı anında yok eden davlumbaz sistemleri.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hizmet-kart">
+                        <div class="card-body text-center p-4">
+                            <i class="fa-solid fa-industry fa-3x text-ana mb-3"></i>
+                            <h4 class="card-title fw-bold">Fabrika ve Sığınak Havalandırma</h4>
+                            <p class="card-text text-muted">Yönetmeliğe uygun filtreli sığınak havalandırmaları ve toz
+                                toplama üniteleri kurulumu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="urunler" class="slider-section">
+        <div class="container mb-4 text-center">
+            <h2 class="fw-bold text-ana">Ürünlerimiz</h2>
+            <p class="text-muted">Ersan Havalandırma güvencesiyle sunduğumuz kaliteli ekipmanlar</p>
+            <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+        </div>
+
+        <div class="slider-container">
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="klima.jpg" alt="Klima Santralleri">
+                    <h5>Klima Santralleri</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="fancoil.jpg" alt="Fancoil Cihazları">
+                    <h5>Fancoil Cihazları</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="havalandırmakanalları.jpg" alt="Havalandırma Kanalları">
+                    <h5>Havalandırma Kanalları</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="hücreliaspiratörler.jpg" alt="Hücreli Aspiratörler">
+                    <h5>Hücreli Aspiratörler</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="mutfakdavlumbazları.jpg" alt="Mutfak Davlumbazları">
+                    <h5>Mutfak Davlumbazları</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="sığnakhavalandırması.jpg" alt="Sığınak Havalandırma">
+                    <h5>Sığınak Havalandırma</h5>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="klima.jpg" alt="Klima Santralleri">
+                    <h5>Klima Santralleri</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="fancoil.jpg" alt="Fancoil Cihazları">
+                    <h5>Fancoil Cihazları</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="havalandırmakanalları.jpg" alt="Havalandırma Kanalları">
+                    <h5>Havalandırma Kanalları</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="hücreliaspiratörler.jpg" alt="Hücreli Aspiratörler">
+                    <h5>Hücreli Aspiratörler</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="mutfakdavlumbazları.jpg" alt="Mutfak Davlumbazları">
+                    <h5>Mutfak Davlumbazları</h5>
+                </div>
+            </div>
+            <div class="slide-item">
+                <div class="slide-card">
+                    <img src="sığnakhavalandırması.jpg" alt="Sığınak Havalandırma">
+                    <h5>Sığınak Havalandırma</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projeler" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-ana">Tamamlanan Projelerimiz</h2>
+                <p class="text-muted">Sahada başarıyla teslim ettiğimiz güncel çalışmalarımız</p>
+                <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm proje-kart">
+                        <img src="stadyum.jpg" class="19 Mayıs Stadyumu" alt="19 Mayıs Stadyumu"
+                            style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-ana mb-2">ANKARA STADYUMU</span>
+                            <h5 class="fw-bold text-dark">19 Mayıs Stadyumu</h5>
+                            <p class="card-text small text-muted">Ankara Stadyumu’nun havalandırma sistemi projesi
+                                başarıyla tamamlanmıştır.
+                                Proje kapsamında uygun hava dağılımı, konfor koşulları ve sistem verimliliği
+                                esas alınarak tasarım gerçekleştirilmiştir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm proje-kart">
+                        <img src="ziraat.jpg" class="Ziraat Bankası" alt="Ziraat Bankası"
+                            style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-ana mb-2">Ziraat Bankası</span>
+                            <h5 class="fw-bold text-dark">Ziraat Bankası </h5>
+                            <p class="card-text small text-muted">Ziraat Bankası Etlik Şubesi’nin havalandırma sistemi
+                                tasarımı
+                                başarıyla tamamlanmıştır. Proje kapsamında iç mekân hava kalitesi, enerji verimliliği ve
+                                kullanıcı konforu esas alınarak uygun sistem çözümleri geliştirilmiştir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm proje-kart">
+                        <img src="toki.jpg" class="Saraycık TOKİ Projesi" alt="Saraycık TOKİ Projesi"
+                            style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-ana mb-2">Saraycık TOKİ</span>
+                            <h5 class="fw-bold text-dark">Saraycık TOKİ Projesi</h5>
+                            <p class="card-text small text-muted">Sincan Saraycık TOKİ yerleşkesinin havalandırma
+                                sistemi tasarımı başarıyla tamamlanmıştır.
+                                Proje kapsamında konutlarda iç hava kalitesi,
+                                enerji verimliliği ve kullanıcı konforu esas alınarak
+                                uygun havalandırma çözümleri geliştirilmiştir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hakkimizda" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="havalandırma.jpg" class="img-fluid rounded shadow" alt="Ersan Havalandırma Uzman Kadro">
+                </div>
+                <div class="col-md-6 ps-md-5">
+                    <h2 class="fw-bold text-ana mb-3">Neden Ersan Havalandırma?</h2>
+                    <p class="text-muted">Ersan Havalandırma Ankara olarak, yılların verdiği tecrübe ve uzman kadromuzla
+                        havalandırma sektöründe öncü çözümler üretiyoruz. Kaliteli malzeme kullanımı ve titiz işçilik
+                        prensibimizle müşterilerimizin havalandırma ihtiyaçlarına kalıcı çözümler sunmaktayız.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Ücretsiz Yerinde Keşif ve
+                            Projelendirme</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> TSE Standartlarında
+                            Kaliteli Malzeme</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Zamanında Teslimat ve Uygun
+                            Fiyat garantisi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="py-5 text-white bg-ana">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">Bizimle İletişime Geçin</h2>
+                <p class="text-light">Hemen arayın, fiyat teklifimizi iletelim.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-5 mb-4">
+                    <h4 class="fw-bold text-warning mb-3">İletişim Bilgileri</h4>
+                    <p class="mb-2"><i class="fa-solid fa-phone me-2 text-warning"></i> <strong>Telefon:</strong>
+                        <a href="tel:05521120671" class="text-white text-decoration-none">0552 112 06 71</a>
+                    </p>
+                    <p class="mb-2"><i class="fa-brands fa-whatsapp me-2 text-success"></i> <strong>WhatsApp:</strong>
+                        <a href="https://wa.me/905521120671" target="_blank"
+                            class="text-white text-decoration-none">0552 112 06 71</a>
+                    </p>
+                    <p class="mb-2"><i class="fa-solid fa-envelope me-2 text-warning"></i> <strong>E-posta:</strong>
+                        info@ersanhavalandirma.com.tr</p>
+                    <p class="mb-2"><i class="fa-solid fa-map-marker-alt me-2 text-warning"></i> <strong>Adres:</strong>
+                        Kazım Karabekir 2063. sk, Etimesgut / Ankara</p>
+                </div>
+                <div class="col-md-5">
+                    <h4 class="fw-bold text-warning mb-3">Mesaj Gönderin</h4>
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Telefon Numaranız" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3"
+                                placeholder="Mesajınız (Menfez, Baca, Davlumbaz ölçüleri vb.)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-vurgu w-100 fw-bold">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-secondary text-center py-3 small">
+        <div class="container">
+            &copy; 2026 Ersan Havalandırma Ankara - Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
